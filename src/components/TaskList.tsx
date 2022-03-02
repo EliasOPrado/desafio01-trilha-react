@@ -29,15 +29,16 @@ export function TaskList() {
     };
 
     if (newTaskTitle === '') {
-      console.log("NULLLL", tasks)
     } else {
       setTasks((tasks) => [...tasks, newTask])
-      console.log("CHECK HERE..", tasks)
     }
   }
 
   function handleToggleTaskCompletion(id: number) {
-    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+    /*
+    Altere entre `true` ou `false` o campo `isComplete` 
+    de uma task com dado ID
+    */ 
   }
 
   function handleRemoveTask(id: number) {

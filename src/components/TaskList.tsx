@@ -39,8 +39,18 @@ export function TaskList() {
     Altere entre `true` ou `false` o campo `isComplete` 
     de uma task com dado ID
     */ 
-   console.log("Bateu aqui...", id)
 
+    // gets the id passed.
+    const taskIndex = tasks.findIndex((task) => task.id === id);
+    
+    // set newTask == to tasks (a state).
+    const newTasks = tasks;
+
+    // sets the new completion to true that !== from the default value.
+    newTasks[taskIndex].isComplete = !newTasks[taskIndex].isComplete;
+
+    // pass the new value to the state.
+    setTasks([...newTasks]);
   }
 
   function handleRemoveTask(id: number) {

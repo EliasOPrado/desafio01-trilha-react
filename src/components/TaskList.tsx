@@ -39,10 +39,13 @@ export function TaskList() {
     Altere entre `true` ou `false` o campo `isComplete` 
     de uma task com dado ID
     */ 
+   console.log("Bateu aqui...", id)
+
   }
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
+    setTasks(tasks => tasks.filter((item) => item.id !== id));
   }
 
   return (

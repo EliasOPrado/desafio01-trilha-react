@@ -16,10 +16,10 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
-    /*
-    Crie uma nova task com um id random, 
-    não permita criar caso o título seja vazio.
-    */
+    
+    // Crie uma nova task com um id random, 
+    // -não permita criar caso o título seja vazio.
+
     let generatedId = Math.floor((1 + Math.random()) * 0x10000)
 
     const newTask: Task = {
@@ -28,8 +28,11 @@ export function TaskList() {
       title: newTaskTitle,
     };
 
+    // check if title is empty.
     if (newTaskTitle === '') {
+      return;
     } else {
+      // If title is not empty send the task to the state.
       setTasks((tasks) => [...tasks, newTask])
     }
   }
